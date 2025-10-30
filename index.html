@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Coastal Medical Research LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-body {
-  background:black; color:white; font-family:Arial;
-  display:flex; justify-content:center; align-items:center;
-  height:100vh; text-align:center;
-}
-h1 { font-size:42px; letter-spacing:2px; }
-p { font-size:22px; color:#d1d5db; }
-a {
-  background:white; color:black; padding:15px 25px; border-radius:5px;
-  text-decoration:none; display:inline-block; margin-top:30px;
-}
+  :root{--bg:#000;--text:#fff;--muted:#cfd3d6;--link:#0ea5e9;--border:#1f2937}
+  *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#000}
+  a{color:var(--link);text-decoration:none}
+
+  /* NAV */
+  .nav{position:sticky;top:0;background:#000;border-bottom:1px solid #111;
+       padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:center}
+  .nav a{color:#fff;opacity:.9;padding:6px 10px;border-radius:8px}
+  .nav a.active,.nav a:hover{background:#0a0a0a;border:1px solid #1f2937}
+
+  /* HERO */
+  .hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;
+        padding:40px 20px;background:#000}
+  .logo{width:60px;height:60px;border-radius:14px;background:#fff;color:#000;display:flex;
+        align-items:center;justify-content:center;font-weight:700;margin:0 auto 16px}
+  h1{font-size:44px;margin:0 0 10px}
+  .tag{color:var(--muted);font-size:18px}
+  .cta{margin-top:28px;display:inline-block;background:#fff;color:#000;padding:14px 22px;border-radius:10px;font-weight:700}
+
+  /* HIGHLIGHTS */
+  .wrap{max-width:1100px;margin:0 auto;padding:24px 16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{border:1px solid var(--border);background:linear-gradient(135deg,#0b0f19,#0f1b2d);
+        border-radius:16px;padding:18px}
+  .card h3{margin:0 0 8px}
+
+  .footer{margin-top:40px;border-top:1px solid #111;color:#aab0b6;padding:24px 16px;text-align:center}
 </style>
 </head>
 <body>
-<div>
-  <h1>Coastal Medical Research</h1>
-  <p>Advancing Healthcare Through Innovation</p>
-  <a href="studies.html">See Current Studies</a>
-</div>
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="active" href="index.html">Home</a>
+    <a href="studies.html">Studies</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="logo">CMR</div>
+      <h1>COASTAL MEDICAL RESEARCH</h1>
+      <div class="tag">Advancing Healthcare Through Innovation</div>
+      <a class="cta" href="studies.html">See Current Studies</a>
+    </div>
+  </section>
+
+  <!-- QUICK HIGHLIGHTS -->
+  <section class="wrap">
+    <div class="grid">
+      <div class="card"><h3>Hypertension</h3><div>Baxdrostat • Mineralys • Zilebesiran</div></div>
+      <div class="card"><h3>Chronic Kidney Disease</h3><div>Kerendia • FSGS • ESKD</div></div>
+      <div class="card"><h3>Other Areas</h3><div>Anemia in CKD • Cannabis Study</div></div>
+    </div>
+  </section>
+
+  <div class="footer">© <span id="y"></span> Coastal Medical Research LLC • Brunswick, GA • Mon–Fri 8:00–17:00</div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
