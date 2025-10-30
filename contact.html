@@ -2,29 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Contact - Coastal Medical Research</title>
+<title>Contact – Coastal Medical Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  background: #1E293B;
-  color:white; font-family:Arial; text-align:center; padding:50px;
+:root {
+  --bg:#000;
+  --text:#fff;
+  --border:#1f2937;
+  --grad1:#3b82f6;
+  --grad2:#0ea5e9;
 }
-h2 { font-size:36px; }
-p { font-size:20px; }
-a {
-  color:white; font-size:20px; margin-top:20px; display:inline-block;
-  text-decoration:none; border:2px solid white; padding:12px 20px; border-radius:6px;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg)}
+a{color:#22d3ee;text-decoration:none}
+.nav{position:sticky;top:0;background:#000;border-bottom:1px solid #111;
+     padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:center}
+.nav a{opacity:.9;padding:6px 10px;border-radius:8px}
+.nav a.active,.nav a:hover{background:#0a0a0a;border:1px solid #1f2937}
+.hero{padding:40px 20px;text-align:center;background:linear-gradient(135deg,var(--grad1),var(--grad2))}
+h1{margin:0}
+.container{max-width:1100px;margin:0 auto;padding:24px 16px}
+.card{background:#0b1220;border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px}
+label{display:block;margin-bottom:6px;font-weight:bold;color:#93c5fd}
+input,textarea{width:100%;padding:10px;margin-bottom:12px;border:1px solid #334155;border-radius:8px;background:#111827;color:#fff}
+button{background:#22d3ee;border:none;padding:12px 20px;border-radius:10px;color:#000;font-weight:bold;cursor:pointer}
+button:hover{background:#38bdf8}
+iframe{width:100%;height:300px;border:0;border-radius:10px}
+.footer{margin-top:40px;border-top:1px solid #111;color:#aab0b6;
+        padding:24px 16px;text-align:center;font-size:14px}
 </style>
 </head>
 <body>
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="studies.html">Studies</a>
+  <a href="about.html">About</a>
+  <a href="careers.html">Careers</a>
+  <a class="active" href="contact.html">Contact</a>
+</nav>
 
-<h2>Contact Us</h2>
-<p>📞 912-262-2723 Ext 151<br>
-📍 Brunswick, GA</p>
-<p>🗺️ Google Map will appear here in full launch</p>
+<header class="hero">
+  <h1>Contact Coastal Medical Research</h1>
+  <p>We’re here to answer your questions about ongoing and upcoming studies.</p>
+</header>
 
-<br>
-<a href="index.html">← Back to Home</a>
+<div class="container">
 
+  <div class="card">
+    <h2>Clinic Address</h2>
+    <p>📍 <strong>3025 Shrine Road, Suite 270</strong><br>Brunswick, GA 31520</p>
+    <p>📞 Phone: <strong>912-262-2723 (Ext 151)</strong></p>
+    <p>📠 Fax: <strong>877-244-5666</strong></p>
+    <p>✉️ Email: <a href="mailto:cmrresearch@gmail.com">cmrresearch@gmail.com</a></p>
+    <p>🕒 Hours: Monday – Friday, 8:00 AM – 5:00 PM</p>
+  </div>
+
+  <div class="card">
+    <h2>Find Us on Map</h2>
+    <iframe src="https://www.google.com/maps?q=3025%20Shrine%20Road%20Suite%20270,%20Brunswick,%20GA%2031520&output=embed" allowfullscreen></iframe>
+  </div>
+
+  <div class="card">
+    <h2>Send a Message</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="How can we help you?"></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</div>
+
+<div class="footer">© <span id="y"></span> Coastal Medical Research LLC · Brunswick, GA</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
