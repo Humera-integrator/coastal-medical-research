@@ -2,37 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>About Us - Coastal Medical Research</title>
+<title>About Us – Coastal Medical Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  background: linear-gradient(to bottom right, #10B981, #047857);
-  color:white; font-family:Arial; text-align:center; padding:40px;
+:root {
+  --bg:#000;
+  --text:#fff;
+  --border:#1f2937;
+  --grad1:#10b981;
+  --grad2:#047857;
 }
-h2 { font-size:36px; margin-bottom:20px; }
-p { font-size:20px; line-height:1.6; }
-a {
-  color:white; font-size:20px; margin-top:20px; display:inline-block;
-  text-decoration:none; border:2px solid white; padding:12px 20px; border-radius:6px;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg)}
+a{color:#22d3ee;text-decoration:none}
+.nav{position:sticky;top:0;background:#000;border-bottom:1px solid #111;
+     padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:center}
+.nav a{opacity:.9;padding:6px 10px;border-radius:8px}
+.nav a.active,.nav a:hover{background:#0a0a0a;border:1px solid #1f2937}
+.hero{padding:40px 20px;text-align:center;background:linear-gradient(135deg,var(--grad1),var(--grad2))}
+h1{margin:0}
+.container{max-width:1100px;margin:0 auto;padding:24px 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px}
+.card{background:#0b1220;border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center}
+.photo{width:120px;height:120px;border-radius:50%;margin:0 auto 12px;
+       background:#111 url('https://via.placeholder.com/240x240?text=Photo') center/cover no-repeat;
+       border:1px solid #263042}
+.role{color:#a6b0bb;font-size:14px;margin-top:-6px}
+.footer{margin-top:40px;border-top:1px solid #111;color:#aab0b6;
+        padding:24px 16px;text-align:center;font-size:14px}
 </style>
 </head>
 <body>
-<h2>Our Research Team</h2>
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="studies.html">Studies</a>
+  <a class="active" href="about.html">About</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-<p><strong>Dr. Ahmed Elsharkawi, MD</strong><br>
-Principal Investigator – Board-Certified Nephrologist</p>
+<header class="hero">
+  <h1>Our Research Team</h1>
+  <p>Dedicated professionals advancing clinical research in Brunswick, GA</p>
+</header>
 
-<p><strong>Walid Abdelwahed</strong><br>
-Research Director</p>
+<div class="container">
+  <div class="grid">
+    <div class="card">
+      <div class="photo"></div>
+      <h3>Dr. Ahmed Elsharkawi MD</h3>
+      <div class="role">Principal Investigator – Nephrologist</div>
+      <p>Board-certified Nephrologist with 15+ years in CKD and hypertension trials.  
+      Oversees clinical safety and protocol compliance for all studies.</p>
+    </div>
+    <div class="card">
+      <div class="photo"></div>
+      <h3>Walid Abdelwahed</h3>
+      <div class="role">Research Director</div>
+      <p>Specializes in operations, regulatory management and CRO liaison activities.  
+      Ensures smooth start-up and regulatory readiness for every study.</p>
+    </div>
+    <div class="card">
+      <div class="photo"></div>
+      <h3>Humera Mohammadi</h3>
+      <div class="role">Lead Clinical Research Coordinator</div>
+      <p>Experienced CRC in Phase II–III nephrology and cardiology trials.  
+      Certified in GCP, IATA & HIPAA.  
+      Oversees subject enrollment, data entry and EDC management.</p>
+    </div>
+    <div class="card">
+      <div class="photo"></div>
+      <h3>Walid Haddad</h3>
+      <div class="role">Clinical Research Coordinator</div>
+      <p>Manages data queries, AE reporting and participant visits.  
+      Supports protocol execution and site documentation compliance.</p>
+    </div>
+  </div>
 
-<p><strong>Humera Mohammadi</strong><br>
-Lead Clinical Research Coordinator</p>
+  <div class="card" style="margin-top:30px">
+    <h3>Site Overview</h3>
+    <p><strong>Address:</strong> 3025 Shrine Road, Suite 270, Brunswick, GA 31520</p>
+    <p><strong>Affiliation:</strong> Southeast Georgia Health System</p>
+    <p><strong>Therapeutic Areas:</strong> Nephrology · Cardiology · Oncology · Psychiatry · Metabolism · Respiratory</p>
+    <p>Coastal Medical Research LLC conducts Phase II–III industry-sponsored clinical trials focused on chronic kidney disease and related conditions.</p>
+  </div>
+</div>
 
-<p><strong>Walid Haddad</strong><br>
-Clinical Research Coordinator</p>
-
-<br>
-<a href="index.html">← Back to Home</a>
-
+<div class="footer">© <span id="y"></span> Coastal Medical Research LLC · Data source: ClinicalTrials.gov & Veeva CTV (2025)</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
